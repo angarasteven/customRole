@@ -196,6 +196,13 @@ class CustomRoleBot {
 
 const customRoleBot = new CustomRoleBot();
 customRoleBot.start();
+                process.on('uncaughtException', (err) => {
+                    console.error('Uncaught Exception:', err);
+                });
+
+                process.on('unhandledRejection', (err) => {
+                    console.error('Unhandled Rejection:', err);
+                });
 
         // Inserted code for nodejs web functionality
         const express = require('express');
